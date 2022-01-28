@@ -101,7 +101,7 @@ def rankings_by_average(message, n: int) -> str:
     while i < n and i != len(scores):
         scoreboard += f"\n{i + 1}. {scores[i][0]} ({round(scores[i][1][0], 4)})"
         i += 1
-    
+
     return scoreboard
 
 
@@ -120,12 +120,10 @@ def rankings_by_win_rate(message, n: int) -> str:
     scores.sort(key=lambda x: x[1][3], reverse=True)
 
     scoreboard = "Rankings by win rate:"
-    scoreboard += "\nBowsah #1"
     i = 0
     while i < n and i != len(scores):
-        scoreboard += f"\n{i + 2}. {scores[i][0]} ({round(scores[i][1][3] * 100, 4)}%)"
+        scoreboard += f"\n{i + 1}. {scores[i][0]} ({round(scores[i][1][3] * 100, 4)}%)"
         i += 1
-    scoreboard += "\n9999999. Koz (0.1%)"
 
     return scoreboard
 
